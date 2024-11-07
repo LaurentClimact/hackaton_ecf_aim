@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
 import numpy as np
-from src.parliament_graph import parliament_graph_generator
+from parliament_graph import parliament_graph_generator
 
 # Set page configuration as the very first line
 st.set_page_config(page_title="Advocacy Impact Monitor", layout="wide")
