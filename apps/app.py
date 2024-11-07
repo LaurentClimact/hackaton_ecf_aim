@@ -11,7 +11,7 @@ def waterfall():
     fig = go.Figure(go.Waterfall(
         name = "20", orientation = "v",
         measure = ["relative", "relative", "relative", "total", "relative", "relative", "total"],
-        x = ["Baseline", "Report: Guidelines for Nature Restoration Law", "Report: Best practices on biodiversity protection", "Votes 1", "Petition: Restore nature now", "Protest: Diversity not degradation", "Votes 2"],
+        x = ["Baseline", "Report: Guidelines for Nature Restoration Law", "Report: Best practices on biodiversity protection", "Votes 1", "Petition: Restore nature now", "Corporate lobbying", "Votes 2"],
         textposition = "outside",
         text = ["270", "+40", "-26", "336", "+40", "-47", "329"],
         y = [270, 40, -26, 336, 40, -47, 329],
