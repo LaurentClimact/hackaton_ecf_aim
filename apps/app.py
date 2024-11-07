@@ -65,6 +65,8 @@ latest_mentions['formatted_date'] = pd.to_datetime(latest_mentions['date']).dt.s
 col1, col2, col3 = st.columns([1, 1, 4])
 
 with col1:
+    # add green arrow going up in my text
+    st.markdown("")
     st.markdown(f"### {mentions_count}")
     st.markdown("**Mentions in the last 7 days**")
 
@@ -94,16 +96,63 @@ mep_sentiment_data = mep_sentiment_data[mep_sentiment_data["topic"] == selected_
 mep_selection = st.selectbox("Select MEP", mep_list)
 mep_sentiment_data = mep_sentiment_data[mep_sentiment_data["name"] == mep_selection]
 
+interventions_impact_data = pd.read_excel(xls, "interventions")
+# sort the data by date
+interventions_impact_data = interventions_impact_data[interventions_impact_data["topic"] == selected_topic].sort_values("date")
+
 col1, col2 = st.columns([2,1])
 # list of name from excel file column name
 
 with col1:
-    # Plotting MEP sentiment line plot
+    # Plotting Sentiment Over Time
     fig_sentiment = go.Figure()
-    fig_sentiment.add_trace(go.Scatter(x=mep_sentiment_data["date"], y=mep_sentiment_data["value"],
-                                       mode='lines+markers', name=f"{mep_selection} sentiment"))
-    fig_sentiment.update_layout(title="Sentiment over time", xaxis_title="Date", yaxis_title="Sentiment Score", template="plotly")
+    # Plotting MEP sentiment line plot
+    # Add main sentiment line trace
+    fig_sentiment.add_trace(go.Scatter(
+        x=mep_sentiment_data["date"],
+        y=mep_sentiment_data["value"],
+        mode='lines+markers',
+        name=f"{mep_selection} sentiment"
+    ))
+
+    # Add vertical lines and vertical text for each intervention
+    for _, row in interventions_impact_data.iterrows():
+        intervention_date = row["date"]
+        intervention_name = row["Name"]
+
+        # Add a vertical line at the intervention date
+        fig_sentiment.add_vline(
+            x=intervention_date,
+            line=dict(color="gray", dash="dash"),
+            opacity=0.7
+        )
+
+        # Add an annotation for the intervention name with vertical text
+        fig_sentiment.add_annotation(
+            x=intervention_date,
+            y=max(mep_sentiment_data["value"]),  # Position at the top of y-axis range
+            text=intervention_name,
+            showarrow=False,
+            textangle=-90,  # Rotate text to be vertical
+            font=dict(size=10, color="black"),
+            bgcolor="lightgray",
+            bordercolor="gray",
+            borderwidth=1,
+            opacity=0.9,
+            yshift=10  # Shift slightly away from the line
+        )
+
+    # Update layout with titles and display settings
+    fig_sentiment.update_layout(
+        title="Sentiment over time with interventions",
+        xaxis_title="Date",
+        yaxis_title="Sentiment Score",
+        template="plotly"
+    )
+
+    # Display in Streamlit
     st.plotly_chart(fig_sentiment)
+
 with col2:
     with st.container(border=True):
         st.markdown("Latest opinions")
@@ -121,19 +170,44 @@ with col2:
             # Display the mention with formatted date and emoji
             st.markdown(f"- **{formatted_date}**: {sentiment_emoji} {row['opinion']}")
 
-# --- topic Impact Section ---
-st.markdown("---")
-st.subheader("Advocacy campaign impact")
-
-# Plotting topic Impact
-fig_impact = go.Figure()
-interventions_impact_data = pd.read_excel(xls, "interventions")
-# sort the data by date
-interventions_impact_data = interventions_impact_data[interventions_impact_data["topic"] == selected_topic].sort_values("date")
-fig_impact.add_trace(go.Scatter(x=interventions_impact_data["date"], y=interventions_impact_data["affected"],
-                                mode='lines+markers', name="Affected"))
-fig_impact.update_layout(title=f"{mep_selection} affected by topic", xaxis_title="Date", yaxis_title="Impact Score", template="plotly_white")
-st.plotly_chart(fig_impact)
+# # --- topic Impact Section ---
+# st.markdown("---")
+# st.subheader("Advocacy campaign impact")
+#
+# # Plotting topic Impact
+# fig_impact = go.Figure()
+# interventions_impact_data = pd.read_excel(xls, "interventions")
+# # sort the data by date
+# interventions_impact_data = interventions_impact_data[interventions_impact_data["topic"] == selected_topic].sort_values("date")
+# fig_impact.add_trace(go.Scatter(x=interventions_impact_data["date"], y=interventions_impact_data["affected"],
+#                                 mode='lines+markers', name="Affected"))
+# fig_impact.update_layout(title=f"{mep_selection} affected by topic", xaxis_title="Date", yaxis_title="Impact Score", template="plotly_white")
+#
+# for _, row in interventions_impact_data.iterrows():
+#     if pd.notna(row["Name"]):  # Only add annotation if there's a milestone name
+#         fig_impact.add_annotation(
+#             x=row["date"],
+#             y=row["affected"],
+#             text=row["Name"],
+#             showarrow=True,
+#             arrowhead=1,
+#             ax=0,
+#             ay=-40,
+#             font=dict(size=10, color="black"),
+#             bgcolor="lightyellow",
+#             bordercolor="gray",
+#             borderwidth=1
+#         )
+#
+# # Update layout with titles and display settings
+# fig_impact.update_layout(
+#     title=f"{selected_topic} impact over time",
+#     xaxis_title="Date",
+#     yaxis_title="Impact Score",
+#     template="plotly_white"
+# )
+#
+# st.plotly_chart(fig_impact)
 
 
 # --- Interventions Section ---
@@ -149,6 +223,7 @@ voting_data = voting_data[voting_data["topic"] == selected_topic]
 voting_before = voting_data["voting_before"].iloc[0]
 voting_after = voting_data["voting_after"].iloc[0]
 total_seats = voting_data["total_seats"].iloc[0]
+
 col1, col2 = st.columns(2)
 
 with col1:
@@ -165,6 +240,40 @@ with col2:
     plt = parliament_graph_generator(voting_after, total_seats)
     # plot plt in streamlit
     st.pyplot(plt)
+
+# Define the data
+with_int = 22  # Number of people who did not change their vote
+without_int = 37  # Number of people who changed their vote
+
+st.subheader("Swing votes")
+
+# Create the stacked bar chart
+fig_swing = go.Figure(data=[
+    go.Bar(
+        name="With Intervention",
+        x=["Votes"],
+        y=[with_int],
+        marker_color="green"
+    ),
+    go.Bar(
+        name="Withou Intervention",
+        x=["Votes"],
+        y=[without_int],
+        marker_color="lightblue"
+    )
+])
+
+# Update layout for stacked view
+fig_swing.update_layout(
+    barmode='stack',
+    title="Swinging Voters between Two Votes",
+    xaxis_title="Vote Outcome",
+    yaxis_title="Number of People",
+    template="plotly_white"
+)
+
+# Display in Streamlit
+st.plotly_chart(fig_swing)
 
 
 
