@@ -11,10 +11,10 @@ def waterfall():
     fig = go.Figure(go.Waterfall(
         name = "20", orientation = "v",
         measure = ["relative", "relative", "relative", "total", "relative", "relative", "total"],
-        x = ["Baseline", "intervention_1", "intervention_2", "Votes_1", "intervention_3", "intervention_4", "Votes_2"],
+        x = ["Baseline", "Report", "Demonstration", "Votes 1", "Petition", "Report", "Votes 2"],
         textposition = "outside",
-        text = ["200", "+80", "-20", "260", "+40", "-20", "280"],
-        y = [200, 80, -20, 260, 40, -20, 280],
+        text = ["270", "+40", "-26", "336", "+40", "-47", "329"],
+        y = [270, 40, -26, 336, 40, -47, 329],
         connector = {"line":{"color":"rgb(63, 63, 63)"}},
     ))
 
