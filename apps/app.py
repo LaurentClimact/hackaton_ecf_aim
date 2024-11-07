@@ -4,6 +4,27 @@ import plotly.graph_objects as go
 import numpy as np
 from parliament_graph import parliament_graph_generator
 
+
+def waterfall():
+    import plotly.graph_objects as go
+
+    fig = go.Figure(go.Waterfall(
+        name = "20", orientation = "v",
+        measure = ["relative", "relative", "relative", "total", "relative", "relative", "total"],
+        x = ["Baseline", "intervention_1", "intervention_2", "Votes_1", "intervention_3", "intervention_4", "Votes_2"],
+        textposition = "outside",
+        text = ["200", "+80", "-20", "260", "+40", "-20", "280"],
+        y = [200, 80, -20, 260, 40, -20, 280],
+        connector = {"line":{"color":"rgb(63, 63, 63)"}},
+    ))
+
+    fig.update_layout(
+            title = "Evolution of intention to vote based on interventions",
+            showlegend = True
+    )
+
+    st.plotly_chart(fig, theme="streamlit")
+
 # Set page configuration as the very first line
 st.set_page_config(page_title="Advocacy Impact Monitor", layout="wide")
 
@@ -101,7 +122,8 @@ with col2:
             st.markdown(f"- **{formatted_date}**: {sentiment_emoji} {row['opinion']}")
 
 # --- topic Impact Section ---
-st.subheader("topic impact")
+st.markdown("---")
+st.subheader("Advocacy campaign impact")
 
 # Plotting topic Impact
 fig_impact = go.Figure()
@@ -113,7 +135,14 @@ fig_impact.add_trace(go.Scatter(x=interventions_impact_data["date"], y=intervent
 fig_impact.update_layout(title=f"{mep_selection} affected by topic", xaxis_title="Date", yaxis_title="Impact Score", template="plotly_white")
 st.plotly_chart(fig_impact)
 
+
+# --- Interventions Section ---
+st.markdown("---")
+st.subheader("Interventions")
+waterfall()
+
 # --- Voting Results Section ---
+st.markdown("---")
 st.subheader("Voting results")
 voting_data = pd.read_excel(xls, "voting_results")
 voting_data = voting_data[voting_data["topic"] == selected_topic]
@@ -136,3 +165,6 @@ with col2:
     plt = parliament_graph_generator(voting_after, total_seats)
     # plot plt in streamlit
     st.pyplot(plt)
+
+
+
