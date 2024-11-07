@@ -23,12 +23,14 @@ dependencies:
   - numpy-base=1.26.4
   - openai=1.52.1
   - openssl=3.0.15
+  - openpyxl
   - pandas=2.2.2
   - pip=24.2
   - pydantic=2.8.2
   - pydantic-core=2.20.1
   - python=3.12.7
   - python-dateutil=2.9.0post0
+  - python-dotenv
   - python-tzdata=2023.3
   - pytz=2024.1
   - setuptools=75.1.0
