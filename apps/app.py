@@ -66,7 +66,6 @@ col1, col2, col3 = st.columns([1, 1, 4])
 
 with col1:
     # add green arrow going up in my text
-    st.markdown("")
     st.markdown(f"### {mentions_count}")
     st.markdown("**Mentions in the last 7 days**")
 
