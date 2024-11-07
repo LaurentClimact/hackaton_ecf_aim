@@ -226,7 +226,7 @@ total_seats = voting_data["total_seats"].iloc[0]
 col1, col2 = st.columns(2)
 
 with col1:
-    st.markdown("### Before topic (estimated)")
+    st.markdown("### Before interventions (estimated)")
     # show the number of positive votes
     st.markdown(f"Positive votes: {int(voting_before)}")
     plt = parliament_graph_generator(voting_before, total_seats)
