@@ -1,0 +1,50 @@
+,ID,Last Name,First Name,Publication Date,Content Category,Topic,Published Content,sentiment
+0,1,Richard,Katherine,2024-06-12,Blog Post,Ban of Thermal Vehicles,It's essential for our economy to prepare for the shift to electric vehicles.,positive
+1,1,Richard,Katherine,2024-01-16,Social Media Post,Ban of Thermal Vehicles,It's essential for our economy to prepare for the shift to electric vehicles.,positive
+2,1,Richard,Katherine,2024-04-10,Social Media Post,Ban of Thermal Vehicles,"Public opinion is shifting, and we need to lead this transformation responsibly.",positive
+3,1,Richard,Katherine,2024-07-17,Press Release,Ban of Thermal Vehicles,"Public opinion is shifting, and we need to lead this transformation responsibly.",positive
+4,1,Richard,Katherine,2024-07-07,Press Release,Ban of Thermal Vehicles,I believe this policy is necessary to combat climate change.,positive
+5,2,Sullivan,Kristen,2024-04-27,Press Release,Ban of Thermal Vehicles,New measures are not needed to support industries affected by the transition.,negative
+6,2,Sullivan,Kristen,2024-07-04,Speech,Ban of Thermal Vehicles,I believe this policy is not necessary to combat climate change.,negative
+7,2,Sullivan,Kristen,2024-05-19,Social Media Post,Ban of Thermal Vehicles,The current measures are enough to support industries affected by the transition.,neutral
+8,2,Sullivan,Kristen,2024-08-14,Interview,Ban of Thermal Vehicles,Public opinion is stable so nothing needs to change.,neutral
+9,2,Sullivan,Kristen,2024-03-25,Speech,Ban of Thermal Vehicles,Climate change is a hoax.,negative
+10,3,Wagner,Juan,2024-10-20,Interview,Ban of Thermal Vehicles,It's essential for our economy to prepare for the shift to electric vehicles.,positive
+11,3,Wagner,Juan,2024-02-06,Press Release,Ban of Thermal Vehicles,I don't believe this policy is necessary to combat climate change.,negative
+12,3,Wagner,Juan,2024-08-28,Speech,Ban of Thermal Vehicles,I believe this policy is necessary to combat climate change.,positive
+13,3,Wagner,Juan,2024-04-07,Speech,Ban of Thermal Vehicles,I believe this policy is necessary to combat climate change.,positive
+14,3,Wagner,Juan,2024-07-25,Speech,Ban of Thermal Vehicles,Our government must act swiftly to transition to cleaner technologies.,positive
+15,4,Mcgrath,Lisa,2024-02-27,Speech,Ban of Thermal Vehicles,We don't need to put new measures in place to support industries affected by the transition.,negative
+16,4,Mcgrath,Lisa,2024-04-30,Blog Post,Ban of Thermal Vehicles,Our government should not act to transition to cleaner technologies.,negative
+17,4,Mcgrath,Lisa,2024-10-10,Blog Post,Ban of Thermal Vehicles,I believe this policy is necessary to combat climate change.,positive
+18,4,Mcgrath,Lisa,2024-01-29,Press Release,Ban of Thermal Vehicles,I don't believe we should make any adaptations regarding our policies to climate change,negative
+19,5,Nolan,Gabriella,2024-07-02,Social Media Post,Ban of Thermal Vehicles,We won't support industries affected by the transition.,negative
+20,5,Nolan,Gabriella,2024-08-05,Speech,Ban of Thermal Vehicles,We don't need to adapt our measures to support industries affected by the transition.,negative
+21,5,Nolan,Gabriella,2024-02-09,Social Media Post,Ban of Thermal Vehicles,I don't believe this policy is necessary as there is no climate change.,negative
+22,5,Nolan,Gabriella,2024-05-17,Press Release,Ban of Thermal Vehicles,Climate change is a hoax.,negative
+23,5,Nolan,Gabriella,2024-06-17,Social Media Post,Ban of Thermal Vehicles,We don't need to make the shift to eletric vehicles.,negative
+24,6,Stewart,Danielle,2024-03-20,Interview,Ban of Thermal Vehicles,I believe this policy is necessary to combat climate change.,positive
+25,6,Stewart,Danielle,2024-08-02,Social Media Post,Ban of Thermal Vehicles,I believe this policy is necessary to combat climate change.,positive
+26,6,Stewart,Danielle,2024-07-04,Speech,Ban of Thermal Vehicles,Our government must act swiftly to transition to cleaner technologies.,positive
+27,6,Stewart,Danielle,2024-06-20,Speech,Ban of Thermal Vehicles,Our government must act swiftly to transition to cleaner technologies.,positive
+28,6,Stewart,Danielle,2024-07-21,Blog Post,Ban of Thermal Vehicles,I believe this policy is necessary to combat climate change.,positive
+29,7,Green,Linda,2024-08-01,Press Release,Ban of Thermal Vehicles,It's essential for our economy to prepare for the shift to electric vehicles.,positive
+30,7,Green,Linda,2024-01-06,Speech,Ban of Thermal Vehicles,We don't need to prepare for the shift to electric vehicles.,negative
+31,7,Green,Linda,2024-02-06,Interview,Ban of Thermal Vehicles,"As we see no motive from the public optinion, we can go on without any transformation.",neutral
+32,7,Green,Linda,2024-10-06,Interview,Ban of Thermal Vehicles,"Public opinion is shifting, and we need to lead this transformation responsibly.",positive
+33,7,Green,Linda,2024-06-03,Social Media Post,Ban of Thermal Vehicles,Our government must act swiftly to transition to cleaner technologies.,positive
+34,8,Page,Kristen,2024-08-30,Social Media Post,Ban of Thermal Vehicles,It's essential for our economy to prepare for the shift to electric vehicles.,positive
+35,8,Page,Kristen,2024-01-01,Press Release,Ban of Thermal Vehicles,We should not put new measures in place to support industries affected by the transition.,negative
+36,8,Page,Kristen,2024-08-25,Speech,Ban of Thermal Vehicles,I believe this policy is necessary to combat climate change.,positive
+37,8,Page,Kristen,2024-07-10,Blog Post,Ban of Thermal Vehicles,It's essential for our economy to prepare for the shift to electric vehicles.,positive
+38,8,Page,Kristen,2024-05-09,Interview,Ban of Thermal Vehicles,Our government does not need to act to transition to cleaner technologies.,negative
+39,9,Sanchez,Mark,2024-01-25,Social Media Post,Ban of Thermal Vehicles,We don't need to prepare our economy for the shift to electric vehicles.,negative
+40,9,Sanchez,Mark,2024-03-15,Press Release,Ban of Thermal Vehicles,Our government does not need to act to transition to cleaner technologies.,negative
+41,9,Sanchez,Mark,2024-08-08,Interview,Ban of Thermal Vehicles,No new measures should be put in place to support industries affected by the transition.,negative
+42,9,Sanchez,Mark,2024-03-27,Speech,Ban of Thermal Vehicles,Climate change is a hoax.,negative
+43,9,Sanchez,Mark,2024-04-02,Interview,Ban of Thermal Vehicles,We don't need to make the shift to eletric vehicles.,negative
+44,10,Pratt,Douglas,2024-07-29,Press Release,Ban of Thermal Vehicles,I believe this policy is necessary to combat climate change.,positive
+45,10,Pratt,Douglas,2024-06-22,Press Release,Ban of Thermal Vehicles,"Public opinion is shifting, and we need to lead this transformation responsibly.",positive
+46,10,Pratt,Douglas,2024-02-05,Press Release,Ban of Thermal Vehicles,No new measures should be put in place to support industries affected by the transition.,negative
+47,10,Pratt,Douglas,2024-02-01,Speech,Ban of Thermal Vehicles,We don't need to prepare for the shift to electric vehicles.,negative
+48,10,Pratt,Douglas,2024-05-04,Interview,Ban of Thermal Vehicles,It's essential for our economy to prepare for the shift to electric vehicles.,positive
