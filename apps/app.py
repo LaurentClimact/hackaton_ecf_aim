@@ -10,11 +10,11 @@ def waterfall():
 
     fig = go.Figure(go.Waterfall(
         name = "20", orientation = "v",
-        measure = ["relative", "relative", "relative", "relative", "relative", "total"],
-        x = ["Votes_1", "intervention_1", "intervention_2", "intervention_3", "intervention_4", "Votes_2"],
+        measure = ["relative", "relative", "relative", "total", "relative", "relative", "total"],
+        x = ["Baseline", "intervention_1", "intervention_2", "Votes_1", "intervention_3", "intervention_4", "Votes_2"],
         textposition = "outside",
-        text = ["200", "+80", "-20", "+40", "-20", "280"],
-        y = [200, 80, -20, 40, -20, 280],
+        text = ["200", "+80", "-20", "260", "+40", "-20", "280"],
+        y = [200, 80, -20, 260, 40, -20, 280],
         connector = {"line":{"color":"rgb(63, 63, 63)"}},
     ))
 
@@ -122,7 +122,8 @@ with col2:
             st.markdown(f"- **{formatted_date}**: {sentiment_emoji} {row['opinion']}")
 
 # --- topic Impact Section ---
-st.subheader("topic impact")
+st.markdown("---")
+st.subheader("Advocacy campaign impact")
 
 # Plotting topic Impact
 fig_impact = go.Figure()
